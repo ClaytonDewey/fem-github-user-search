@@ -5,7 +5,7 @@ const Toggler = ({ theme, themeText, switchTheme }) => {
     <div className='toggler'>
       <div className='toggle-container'>
         <label htmlFor='mode' className='label'>
-          <span>{themeText}</span>
+          <span>{themeText} </span>
           {theme === 'light' ? <Icon name='moon' /> : <Icon name='sun' />}
           <input
             type='checkbox'

@@ -1,12 +1,13 @@
 :root {
   --clr-dark: #141d2f;
   --clr-light: #f6f8ff;
-  --clr-dark-blue: #1e2a47;
+  --clr-dark-blue: #222731;
   --clr-primary: #0079ff;
   --clr-lt-blue: #60abff;
   --clr-faded-white: #8d95a2;
-  --clr-blue-gray: #90a4d4;
-  --white: #fefefe;
+  --clr-blue-gray: #4b6a9b;
+  --off-white: #fefefe;
+  --white: #fff;
 
   --ff-mono: 'Space Mono';
   --fw-bold: 700;
@@ -19,16 +20,38 @@
 
   --bdr-rds: 1.2rem;
   --bx-shd: 0px 10px 15px rgba(0, 0, 0, 0.1);
-  --background: white;
-  --text-primary: black;
-  --text-secondary: royalblue;
-  --accent: rebeccapurple;
+
+  --background: var(--clr-light);
+  --text-primary: #2b3442;
+  --icon: var(--clr-blue-gray);
+  --link: var(--clr-blue-gray);
+  --toggleHover: var(--clr-dark-blue);
+  --placeholder: var(--clr-blue-gray);
+  --boxShadow: var(--bx-shd);
+  --boxBackground: var(--off-white);
+  --statsBg: var(--clr-light);
 }
+
 [data-theme='dark'] {
-  --background: black;
-  --text-primary: white;
-  --text-secondary: grey;
-  --accent: darkred;
+  --background: var(--clr-dark);
+  --text-primary: var(--white);
+  --icon: var(--white);
+  --link: var(--white);
+  --toggleHover: #90a4d4;
+  --placeholder: var(--white);
+  --boxShadow: none;
+  --boxBackground: #1e2a47;
+  --statsBg: var(--clr-dark);
+}
+
+.app {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  height: 100vh;
+  transition: all 0.5s;
 }
 
 *,
@@ -40,13 +63,10 @@
 }
 html,
 body {
-  margin: 2rem auto;
   width: 100%;
   box-sizing: border-box;
 }
 html {
-  background: var(--background);
-  color: var(--text-primary);
   font-family: var(--ff-mono), -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: var(--ff-reg);
@@ -57,7 +77,6 @@ body {
   font-size: var(--fs-sm);
   line-height: 2.5rem;
   font-weight: var(--fw-reg);
-  padding: 2rem;
 }
 h1 {
   font-size: var(--fs-md);
@@ -100,8 +119,40 @@ input {
   font-size: var(--fs-md);
 
   &::placeholder {
-    color: var(--text-secondary);
+    color: var(--icon);
   }
+}
+.container {
+  position: relative;
+  font-size: var(--fs-sm);
+  line-height: 25px;
+  font-weight: var(--fw-reg);
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+}
+
+.main {
+  width: 100%;
+  max-width: 730px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.header svg {
+  vertical-align: text-bottom;
 }
 
 .toggler {
@@ -112,7 +163,7 @@ input {
   }
 
   svg {
-    fill: var(--accent);
+    fill: var(--link);
   }
 
   label {

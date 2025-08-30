@@ -17,7 +17,15 @@ const App = () => {
 
   return (
     <div className='app' data-theme={theme}>
-      <Header theme={theme} themeText={themeText} switchTheme={switchTheme} />
+      <div className='container'>
+        <main className='main'>
+          <Header
+            theme={theme}
+            themeText={themeText}
+            switchTheme={switchTheme}
+          />
+        </main>
+      </div>
     </div>
   );
 };
