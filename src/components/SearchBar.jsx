@@ -1,8 +1,13 @@
 import { Icon } from '../svg';
 const SearchBar = () => {
   return (
-    <form className='search-form'>
-      <input type='search' placeholder='Search GitHub username...' />
+    <form className='search__form'>
+      <label htmlFor='search' className='sr-only'></label>
+      <input
+        type='search'
+        id='search'
+        placeholder='Search GitHub username...'
+      />
       <Icon name='search' />
       {/* error stuff here... */}
       <button type='submit'>Search</button>
