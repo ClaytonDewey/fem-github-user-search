@@ -1,5 +1,6 @@
 import useLocalStorage from 'use-local-storage';
 import Header from './Header';
+import SearchBar from './SearchBar';
 
 const App = () => {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -24,6 +25,8 @@ const App = () => {
             themeText={themeText}
             switchTheme={switchTheme}
           />
+
+          <SearchBar />
         </main>
       </div>
     </div>
