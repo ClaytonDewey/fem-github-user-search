@@ -1,16 +1,21 @@
-const UserInfo = () => {
+const UserInfo = ({ user, joinedDate }) => {
+  const { name, html_url, login, bio } = user;
   return (
     <div className='user__info'>
       <header className='user__info-header'>
-        <h2>The Octocat</h2>
+        {name ? <h2>{name}</h2> : <h2>Not Available</h2>}
         <h3>
-          <a href='/' target='_blank' rel='noreferrer'>
-            @octocat
+          <a href={html_url} target='_blank' rel='noreferrer'>
+            @{login}
           </a>
         </h3>
-        <p>Joined January 25 2011</p>
+        <p>Joined {joinedDate}</p>
       </header>
-      <p className='bio'>This profile has no bio</p>
+      {!bio ? (
+        <p className='bio'>This profile has no bio</p>
+      ) : (
+        <p className='bio'>{bio}</p>
+      )}
     </div>
   );
 };

@@ -1,49 +1,51 @@
+import SkeletonLoader from './SkeletonLoader';
 import UserInfo from './UserInfo';
 import UserLinks from './UserLinks';
 import UserStats from './UserStats';
-import { Icon } from '../svg';
 
-const UserCard = () => {
+const UserCard = ({ user, isLoading, isError }) => {
+  const { created_at, avatar_url, name } = user;
+  const joinedDate = new Date(Date.parse(created_at))
+    .toLocaleDateString('en-us', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    })
+    .replace(',', ' ');
+
+  const links = ['location', 'website', 'twitter', 'company'];
+
+  if (isLoading) {
+    return <SkeletonLoader />;
+  }
+
   return (
-    <div className='user__card'>
-      <img src='../temp-img/octo-cat.png' alt='octo-cat' />
-      <div>
-        <UserInfo />
+    <div className={isError ? 'user__card-flex' : 'user__card'}>
+      {isError ? (
+        <div className='alert'>No user found...</div>
+      ) : (
+        <>
+          <img src={avatar_url} alt={`${name}'s avatar`} />
+          <div>
+            <UserInfo user={user} joinedDate={joinedDate} />
 
-        <UserStats />
+            <UserStats user={user} />
 
-        <div className='user__card-links'>
-          <div className='user__link div1'>
-            <div>
-              <Icon name='location' />
-              San Francisco
+            <div className='user__card-links'>
+              {links.map((link, idx) => {
+                return (
+                  <UserLinks
+                    key={idx}
+                    idx={`div${idx + 1}`}
+                    user={user}
+                    linkType={link}
+                  />
+                );
+              })}
             </div>
           </div>
-
-          <div className='user__link div2'>
-            <div>
-              <Icon name='website' />
-              <a href='https://github.blog' target='_blank' rel='noreferrer'>
-                https://github.blog
-              </a>
-            </div>
-          </div>
-
-          <div className='user__link faded div3'>
-            <div>
-              <Icon name='twitter' />
-              Not Available
-            </div>
-          </div>
-
-          <div className='user__link div4'>
-            <div>
-              <Icon name='company' />
-              @github
-            </div>
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

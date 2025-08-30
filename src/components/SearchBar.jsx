@@ -1,17 +1,32 @@
+import { useState } from 'react';
 import { Icon } from '../svg';
-const SearchBar = () => {
+const SearchBar = ({ handleSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleChange = (e) => {
+    const name = e.target.value.replaceAll(' ', '');
+    setSearchTerm(name);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchTerm);
+  };
+
   return (
-    <form className='search__form'>
-      <label htmlFor='search' className='sr-only'></label>
-      <input
-        type='search'
-        id='search'
-        placeholder='Search GitHub username...'
-      />
-      <Icon name='search' />
-      {/* error stuff here... */}
-      <button type='submit'>Search</button>
-    </form>
+    <>
+      <form className='search__form' onSubmit={handleSubmit}>
+        <label htmlFor='search' className='sr-only'></label>
+        <input
+          type='search'
+          id='search'
+          onChange={handleChange}
+          placeholder='Search GitHub username...'
+        />
+        <Icon name='search' />
+        <button type='submit'>Search</button>
+      </form>
+    </>
   );
 };
 export default SearchBar;

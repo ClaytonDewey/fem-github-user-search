@@ -1,17 +1,18 @@
-const UserStats = () => {
+const UserStats = ({ user }) => {
+  const { public_repos, followers, following } = user;
   return (
     <div className='user__stats'>
       <div>
         Repos
-        <span>8</span>
+        <span>{public_repos}</span>
       </div>
       <div>
         Followers
-        <span>19406</span>
+        <span>{followers}</span>
       </div>
       <div>
         Following
-        <span>9</span>
+        <span>{following}</span>
       </div>
     </div>
   );

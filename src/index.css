@@ -1,6 +1,6 @@
 :root {
   --clr-dark: #141d2f;
-  --clr-light: #f6f8ff;
+  --clr-light: #e2e3e8;
   --clr-dark-blue: #222731;
   --clr-primary: #0079ff;
   --clr-lt-blue: #60abff;
@@ -30,6 +30,8 @@
   --boxShadow: var(--bx-shd);
   --boxBackground: var(--off-white);
   --statsBg: var(--clr-light);
+  --skeletonBase: var(--clr-light);
+  --skeletonHighlight: #e7e8ef;
 }
 
 [data-theme='dark'] {
@@ -38,10 +40,12 @@
   --icon: var(--white);
   --link: var(--white);
   --toggleHover: #90a4d4;
-  --placeholder: ;
+  --placeholder: var(--white);
   --boxShadow: none;
   --boxBackground: #1e2a47;
   --statsBg: var(--clr-dark);
+  --skeletonBase: #96afe8;
+  --skeletonHighlight: #90a4d4;
 }
 
 .app {
@@ -221,11 +225,8 @@ input {
   background-color: var(--clr-lt-blue);
 }
 
-.error {
-  color: red;
-  position: absolute;
-  right: 15px;
-  top: 35%;
+input[type='search']::-webkit-search-cancel-button {
+  display: none;
 }
 
 @media screen and (min-width: 64em) {
@@ -246,14 +247,16 @@ input {
 }
 
 /* User Card */
-.user__card {
+.user__card,
+.user__card-flex {
   background-color: var(--boxBackground);
   border-radius: var(--bdr-rds);
   padding: 20px;
   box-shadow: var(--boxShadow);
 }
 
-.user__card img {
+.user__card img,
+.user__card-avatar {
   border-radius: 50%;
   height: 70px;
   width: 70px;
@@ -268,7 +271,13 @@ input {
     padding: 40px;
   }
 
-  .user__card img {
+  .user__card-flex {
+    display: flex;
+    padding: 40px;
+  }
+
+  .user__card img,
+  .user__card-avatar {
     height: 117px;
     width: 117px;
     float: none;
@@ -401,4 +410,15 @@ input {
 
 .user__link.faded svg {
   fill: var(--clr-faded-white);
+}
+
+/* Alert Box */
+.alert {
+  position: relative;
+  padding: 16px;
+  color: #842029;
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  border-radius: 6px;
+  width: 100%;
 }
