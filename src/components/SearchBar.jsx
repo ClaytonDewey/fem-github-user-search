@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Icon } from '../svg';
+import toast from 'react-hot-toast';
+
 const SearchBar = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -10,6 +12,10 @@ const SearchBar = ({ handleSearch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!searchTerm) {
+      toast.error('Please enter a GitHub User');
+      return;
+    }
     handleSearch(searchTerm);
   };
 

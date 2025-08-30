@@ -3,6 +3,7 @@ import Header from './Header';
 import SearchBar from './SearchBar';
 import UserCard from './UserCard';
 import { useEffect, useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const apiUrl = 'https://api.github.com/users/';
@@ -54,6 +55,7 @@ const App = () => {
 
   return (
     <div className='app' data-theme={theme}>
+      <Toaster position='top-center' />
       <div className='container'>
         <main className='main'>
           <Header
