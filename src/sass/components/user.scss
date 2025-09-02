@@ -1,0 +1,167 @@
+@use '../util' as *;
+
+/* User Card */
+.user__card,
+.user__card-flex {
+  background-color: var(--boxBackground);
+  border-radius: var(--bdr-rds);
+  padding: rem(20);
+  box-shadow: var(--boxShadow);
+}
+
+.user__card img,
+.user__card-avatar {
+  border-radius: 50%;
+  height: rem(70);
+  width: rem(70);
+  float: left;
+}
+
+@media screen and (min-width: 64em) {
+  .user__card {
+    display: grid;
+    gap: rem(40);
+    grid-template-columns: auto 1fr;
+    padding: rem(40);
+  }
+
+  .user__card-flex {
+    display: flex;
+    padding: rem(40);
+  }
+
+  .user__card img,
+  .user__card-avatar {
+    height: rem(117);
+    width: rem(117);
+    float: none;
+  }
+}
+
+/* User Info */
+.user__info {
+  margin-bottom: rem(30);
+}
+
+.user__info a {
+  font-size: var(--fs-md);
+}
+
+.user__info .bio {
+  margin-block: rem(30);
+}
+
+@media screen and (min-width: 36em) {
+  .user__info-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user__info-header p {
+    text-align: right;
+  }
+
+  .user__info-header h2 {
+    font-weight: var(--fw-bold);
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .user__info-header h3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .user__info-header p {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+}
+
+/* User Stats */
+.user__stats {
+  background-color: var(--statsBg);
+  border-radius: var(--bdr-rds);
+  padding-block: rem(20);
+}
+
+.user__stats div {
+  text-align: center;
+  margin-bottom: rem(20);
+}
+
+.user__stats div span {
+  display: block;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+
+@media screen and (min-width: 40em) {
+  .user__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: rem(20);
+    margin-bottom: rem(20);
+  }
+
+  .user__stats div {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .user__stats div span {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* User Links */
+@media screen and (min-width: 36em) {
+  .user__card-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: rem(10) rem(20);
+  }
+
+  .user__link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user__link.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .user__link.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .user__link.div3 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .user__link.div4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+.user__link {
+  background-color: transparent;
+  color: var(--link);
+  margin-bottom: rem(10);
+  gap: 0 rem(20);
+  overflow: hidden;
+}
+
+.user__link a {
+  color: var(--link);
+}
+
+.user__link svg {
+  margin-right: rem(20);
+  fill: var(--link);
+  vertical-align: text-bottom;
+}
+
+.user__link.faded {
+  color: var(--clr-faded-white);
+}
+
+.user__link.faded svg {
+  fill: var(--clr-faded-white);
+}

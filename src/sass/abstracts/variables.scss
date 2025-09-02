@@ -1,0 +1,51 @@
+@use '../util' as *;
+
+:root {
+  --clr-dark: #141d2f;
+  --clr-light: #e2e3e8;
+  --clr-dark-blue: #222731;
+  --clr-primary: #0079ff;
+  --clr-lt-blue: #60abff;
+  --clr-faded-white: #8d95a2;
+  --clr-blue-gray: #4b6a9b;
+  --off-white: #fefefe;
+  --white: #fff;
+
+  --ff-mono: 'Space Mono';
+  --fw-bold: 700;
+  --fw-reg: 400;
+  --fs-xlg: #{rem(28)};
+  --fs-lg: #{rem(22)};
+  --fs-md: #{rem(16)};
+  --fs-sm: #{rem(15)};
+  --fs-xsm: #{rem(13)};
+
+  --bdr-rds: #{rem(12)};
+  --bx-shd: 0 #{rem(10)} #{rem(15)} rgba(0, 0, 0, 0.1);
+
+  --background: var(--clr-light);
+  --text: #2b3442;
+  --icon: var(--clr-blue-gray);
+  --link: var(--clr-blue-gray);
+  --toggleHover: var(--clr-dark-blue);
+  --placeholder: var(--clr-blue-gray);
+  --boxShadow: var(--bx-shd);
+  --boxBackground: var(--off-white);
+  --statsBg: var(--clr-light);
+  --skeletonBase: var(--clr-light);
+  --skeletonHighlight: #e7e8ef;
+}
+
+[data-theme='dark'] {
+  --background: var(--clr-dark);
+  --text: var(--white);
+  --icon: var(--white);
+  --link: var(--white);
+  --toggleHover: #90a4d4;
+  --placeholder: var(--white);
+  --boxShadow: none;
+  --boxBackground: #1e2a47;
+  --statsBg: var(--clr-dark);
+  --skeletonBase: #96afe8;
+  --skeletonHighlight: #90a4d4;
+}

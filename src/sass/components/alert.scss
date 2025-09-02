@@ -1,0 +1,12 @@
+@use '../util' as *;
+
+/* Alert Box */
+.alert {
+  position: relative;
+  padding: rem(16);
+  color: #842029;
+  background-color: #f8d7da;
+  border: rem(1) solid #f5c2c7;
+  border-radius: rem(6);
+  width: 100%;
+}

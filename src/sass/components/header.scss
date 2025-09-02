@@ -1,0 +1,33 @@
+@use '../util' as *;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: rem(40);
+}
+
+.header svg {
+  vertical-align: text-bottom;
+}
+
+.toggler {
+  input {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+
+  svg {
+    fill: var(--icon);
+  }
+
+  label {
+    &:hover {
+      cursor: pointer;
+      color: var(--toggleHover);
+      svg {
+        fill: var(--toggleHover);
+      }
+    }
+  }
+}
