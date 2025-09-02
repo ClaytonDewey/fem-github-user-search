@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rem-github-user-search/static/css/main.ba2b6c2f.css",
+    "main.js": "/rem-github-user-search/static/js/main.1ab5c22c.js",
+    "static/js/453.0050b6f3.chunk.js": "/rem-github-user-search/static/js/453.0050b6f3.chunk.js",
+    "index.html": "/rem-github-user-search/index.html",
+    "main.ba2b6c2f.css.map": "/rem-github-user-search/static/css/main.ba2b6c2f.css.map",
+    "main.1ab5c22c.js.map": "/rem-github-user-search/static/js/main.1ab5c22c.js.map",
+    "453.0050b6f3.chunk.js.map": "/rem-github-user-search/static/js/453.0050b6f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba2b6c2f.css",
+    "static/js/main.1ab5c22c.js"
+  ]
+}
