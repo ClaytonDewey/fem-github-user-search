@@ -9,7 +9,7 @@
 
 .search__form input {
   background-color: var(--boxBackground);
-  color: var(--clr-faded-white);
+  color: var(--text-primary);
   border-radius: var(--bdr-rds);
   border: none;
   height: rem(60);
@@ -34,7 +34,8 @@
   right: rem(10);
   top: rem(7);
   background-color: var(--clr-primary);
-  color: var(--off-white);
+  color: var(--white);
+  font-weight: 700;
   border: none;
   border-radius: var(--bdr-rds);
   height: rem(46);
